@@ -77,40 +77,30 @@ public class ShortUrlService {
 		long days = TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS);
 		Date expiry = new Date(System.currentTimeMillis() + days);
 		UrlShortEvent url = new UrlShortEvent();
-		System.out.println("Expiry" + expiry);
 		url.setExpiryDate(expiry);
-		System.out.println("urlString" + urlString);
 		url.setUrlText(urlString);
 		long nextId = nextID();
-		System.out.println("nextId : " + nextId);
 		url.setUrlId(nextId);
 		UrlShortEvent entity = urlSaveRepo.save(url);
 		String shrtUrl = convUrlFactory.encode(entity.getUrlId());
-		System.out.println("ID :" + entity.getUrlId() + "   " + shrtUrl + "  : shrtUrl");
 		entity.setShorturl(shrtUrl);
-		System.out.println(shrtUrl);
 		entity = urlSaveRepo.save(entity);
-		System.out.println("shrtUrl" + entity.getShorturl() + "       ---------Gen");
 		return entity;
 	}
 
 	public String redirectOriginalUrl(String shortUrl) {
 		// long id = convUrlFactory.decode(shortUrl);
 		// System.out.println("Id : " + id);
-		System.out.println("shortUrl :" + shortUrl);
 		UrlShortEvent entity = urlSaveRepo.findByShorturl(shortUrl);
 
 		if (entity == null) {
-			System.out.println("Null");
 			new EntityNotFoundException("There is no entity with " + shortUrl);
 		}
 //				.orElseThrow(() -> new EntityNotFoundException("There is no entity with " + shortUrl));
-		System.out.println("95" + entity.getShorturl());
 		if (entity.getExpiryDate() != null && entity.getExpiryDate().before(new Date())) {
 			urlSaveRepo.delete(entity);
 			throw new EntityNotFoundException("Link expired!");
 		}
-		System.out.println("entity.getUrlText()" + entity.getUrlText());
 		return entity.getUrlText();
 	}
 }
