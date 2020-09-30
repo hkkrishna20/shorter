@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_jca6oAMVEeuUaMpahSh9xw" name="shorter">
+    <eAnnotations xmi:id="_k8mT8AMVEeuUaMpahSh9xw" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_k8m7AAMVEeuUaMpahSh9xw" source="codegen">
+        <details xmi:id="_k8niEAMVEeuUaMpahSh9xw" key="codegenDirectory" value="/shorter/src/main/java"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_qJiS4AMVEeuUaMpahSh9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_qJi58AMVEeuUaMpahSh9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_qJjhAAMVEeuUaMpahSh9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_qJjhAQMVEeuUaMpahSh9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_qJjhAgMVEeuUaMpahSh9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_qJkIEAMVEeuUaMpahSh9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_qJkIEQMVEeuUaMpahSh9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_qJkIEgMVEeuUaMpahSh9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_qJl9QAMVEeuUaMpahSh9xw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_qAZlAAMVEeuUaMpahSh9xw" name="com">
+      <packagedElement xmi:type="uml:Package" xmi:id="_qDMaUAMVEeuUaMpahSh9xw" name="url">
+        <packagedElement xmi:type="uml:Package" xmi:id="_qDNBYAMVEeuUaMpahSh9xw" name="shortner">
+          <packagedElement xmi:type="uml:Package" xmi:id="_qFkY4AMVEeuUaMpahSh9xw" name="shorturl">
+            <packagedElement xmi:type="uml:Package" xmi:id="_qFkY4QMVEeuUaMpahSh9xw" name="config">
+              <packagedElement xmi:type="uml:Class" xmi:id="_qcfrIAMVEeuUaMpahSh9xw" name="WebMvcConfig">
+                <interfaceRealization xmi:id="_qv-AwAMVEeuUaMpahSh9xw" client="_qcfrIAMVEeuUaMpahSh9xw" supplier="_qvdqcAMVEeuUaMpahSh9xw" contract="_qvdqcAMVEeuUaMpahSh9xw"/>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qxlxYAMVEeuUaMpahSh9xw" name="addInterceptors" specification="_qv_O4AMVEeuUaMpahSh9xw">
+                  <ownedParameter xmi:id="_qxlxYQMVEeuUaMpahSh9xw" name="registry" type="_qvanIAMVEeuUaMpahSh9xw"/>
+                  <language>java</language>
+                  <body>registry.addInterceptor(new RequestObjectFilter()).addPathPatterns(&quot;/**&quot;)&#xD;
+				.excludePathPatterns(&quot;/static/**&quot;, &quot;/assets/**&quot;, &quot;/css/**&quot;, &quot;/images/**&quot;, &quot;/layui_ext/**&quot;, &quot;/login&quot;,&#xD;
+						&quot;/login/main&quot;, &quot;/genCaptcha&quot;, &quot;swagger-resources/**&quot;, &quot;v2/api-docs/**&quot;, &quot;/csrf/**&quot;)&#xD;
+				.excludePathPatterns(&quot;/**/*.css&quot;, &quot;/**/*.js&quot;, &quot;/**/*.png&quot;, &quot;/**/*.jpg&quot;, &quot;/**/*.jpeg&quot;);&#xD;
+		;&#xD;
+	</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qxmYcAMVEeuUaMpahSh9xw" name="addResourceHandlers" specification="_qwBEEQMVEeuUaMpahSh9xw">
+                  <ownedParameter xmi:id="_qxmYcQMVEeuUaMpahSh9xw" name="registry" type="_qvb1QQMVEeuUaMpahSh9xw"/>
+                  <language>java</language>
+                  <body>registry.addResourceHandler(&quot;swagger-ui.html&quot;).addResourceLocations(&quot;classpath:/META-INF/resources/&quot;);&#xD;
+		registry.addResourceHandler(&quot;/webjars/**&quot;).addResourceLocations(&quot;classpath:/META-INF/resources/webjars/&quot;);&#xD;
+		// super.addResourceHandlers(registry);&#xD;
+		registry.addResourceHandler(&quot;/swagger-resources/**&quot;).addResourceLocations(&quot;classpath:/META-INF/resources/&quot;);&#xD;
+		registry.addResourceHandler(&quot;/v2/**&quot;);&#xD;
+		registry.addResourceHandler(&quot;/csrf/**&quot;);&#xD;
+&#xD;
+	</body>
+                </ownedBehavior>
+                <ownedOperation xmi:id="_qv_O4AMVEeuUaMpahSh9xw" name="addInterceptors" method="_qxlxYAMVEeuUaMpahSh9xw">
+                  <ownedParameter xmi:id="_qv_O4QMVEeuUaMpahSh9xw" name="registry" type="_qvanIAMVEeuUaMpahSh9xw"/>
+                </ownedOperation>
+                <ownedOperation xmi:id="_qwBEEQMVEeuUaMpahSh9xw" name="addResourceHandlers" method="_qxmYcAMVEeuUaMpahSh9xw">
+                  <ownedParameter xmi:id="_qwBrIAMVEeuUaMpahSh9xw" name="registry" type="_qvb1QQMVEeuUaMpahSh9xw"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_qsQlcQMVEeuUaMpahSh9xw" name="RequestObjectFilter"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_qFlnAAMVEeuUaMpahSh9xw" name="controller">
+              <packagedElement xmi:type="uml:Package" xmi:id="_qFlnAQMVEeuUaMpahSh9xw" name="exceptions">
+                <packagedElement xmi:type="uml:Class" xmi:id="_qsTBsAMVEeuUaMpahSh9xw" name="Handler"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_qav-sAMVEeuUaMpahSh9xw" name="ShortUrlController">
+                <ownedAttribute xmi:id="_qwEucAMVEeuUaMpahSh9xw" name="shortUrlService" visibility="private" type="_qsxi0QMVEeuUaMpahSh9xw" association="_qx4FQAMVEeuUaMpahSh9xw"/>
+                <interfaceRealization xmi:id="_qvCzsAMVEeuUaMpahSh9xw" client="_qav-sAMVEeuUaMpahSh9xw" supplier="_qboIcAMVEeuUaMpahSh9xw" contract="_qboIcAMVEeuUaMpahSh9xw"/>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qxjVIAMVEeuUaMpahSh9xw" name="getShortUrlByGetMethodWithRequestParam" specification="_qbBrgAMVEeuUaMpahSh9xw">
+                  <ownedParameter xmi:id="_qxjVIQMVEeuUaMpahSh9xw" name="url">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qxjVIgMVEeuUaMpahSh9xw" name="operation">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qxjVIwMVEeuUaMpahSh9xw" name="shorturl">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qxjVJAMVEeuUaMpahSh9xw" type="_qstRYQMVEeuUaMpahSh9xw" direction="return"/>
+                  <language>java</language>
+                  <body>return shortUrlService.operation(url, operation, shorturl);&#xD;
+	</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qxkjQAMVEeuUaMpahSh9xw" name="getShortUrlByPostMethod" specification="_qvrs4AMVEeuUaMpahSh9xw">
+                  <ownedParameter xmi:id="_qxkjQQMVEeuUaMpahSh9xw" name="urldto" type="_qswUsAMVEeuUaMpahSh9xw"/>
+                  <ownedParameter xmi:id="_qxkjQgMVEeuUaMpahSh9xw" name="operation">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qxkjQwMVEeuUaMpahSh9xw" type="_qstRYQMVEeuUaMpahSh9xw" direction="return"/>
+                  <language>java</language>
+                  <body>return shortUrlService.operation(urldto.getUrl(), &quot;gen&quot;, &quot;&quot;);&#xD;
+	</body>
+                </ownedBehavior>
+                <ownedOperation xmi:id="_qbBrgAMVEeuUaMpahSh9xw" name="getShortUrlByGetMethodWithRequestParam" method="_qxjVIAMVEeuUaMpahSh9xw">
+                  <ownedParameter xmi:id="_qbBrgQMVEeuUaMpahSh9xw" name="url">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qbCSkAMVEeuUaMpahSh9xw" name="operation">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qbCSkQMVEeuUaMpahSh9xw" name="shorturl">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qvrF0AMVEeuUaMpahSh9xw" type="_qstRYQMVEeuUaMpahSh9xw" direction="return"/>
+                </ownedOperation>
+                <ownedOperation xmi:id="_qvrs4AMVEeuUaMpahSh9xw" name="getShortUrlByPostMethod" method="_qxkjQAMVEeuUaMpahSh9xw">
+                  <ownedParameter xmi:id="_qvsT8AMVEeuUaMpahSh9xw" name="urldto" type="_qswUsAMVEeuUaMpahSh9xw"/>
+                  <ownedParameter xmi:id="_qvsT8QMVEeuUaMpahSh9xw" name="operation">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qvuwMAMVEeuUaMpahSh9xw" type="_qstRYQMVEeuUaMpahSh9xw" direction="return"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Interface" xmi:id="_qboIcAMVEeuUaMpahSh9xw" name="IShortUrlOperations">
+                <ownedOperation xmi:id="_qbsZ4AMVEeuUaMpahSh9xw" name="getShortUrlByGetMethodWithRequestParam">
+                  <ownedParameter xmi:id="_qbtA8AMVEeuUaMpahSh9xw" name="id">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qbtA8QMVEeuUaMpahSh9xw" name="operation">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qbtoAAMVEeuUaMpahSh9xw" name="shorturl">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qv1d4AMVEeuUaMpahSh9xw" type="_qstRYQMVEeuUaMpahSh9xw" direction="return"/>
+                </ownedOperation>
+                <ownedOperation xmi:id="_qv36IAMVEeuUaMpahSh9xw" name="getShortUrlByPostMethod">
+                  <ownedParameter xmi:id="_qv36IQMVEeuUaMpahSh9xw" name="urldto" type="_qswUsAMVEeuUaMpahSh9xw"/>
+                  <ownedParameter xmi:id="_qv36IgMVEeuUaMpahSh9xw" name="operation">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qv5vUQMVEeuUaMpahSh9xw" type="_qstRYQMVEeuUaMpahSh9xw" direction="return"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_qx4FQAMVEeuUaMpahSh9xw" name="" memberEnd="_qx4FQQMVEeuUaMpahSh9xw _qwEucAMVEeuUaMpahSh9xw">
+                <ownedEnd xmi:id="_qx4FQQMVEeuUaMpahSh9xw" name="" type="_qav-sAMVEeuUaMpahSh9xw" association="_qx4FQAMVEeuUaMpahSh9xw"/>
+              </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_qGb7kAMVEeuUaMpahSh9xw" name="dto">
+              <packagedElement xmi:type="uml:Class" xmi:id="_qswUsAMVEeuUaMpahSh9xw" name="UrlReqDTO"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_qGcioAMVEeuUaMpahSh9xw" name="service">
+              <packagedElement xmi:type="uml:Class" xmi:id="_qsxi0QMVEeuUaMpahSh9xw" name="ShortUrlService"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_qG_8QAMVEeuUaMpahSh9xw" name="common">
+              <packagedElement xmi:type="uml:Class" xmi:id="_qbbUIAMVEeuUaMpahSh9xw" name="NotFoundException">
+                <generalization xmi:id="_qvzosAMVEeuUaMpahSh9xw" general="_qvxMcQMVEeuUaMpahSh9xw"/>
+                <ownedAttribute xmi:id="_qwHxwAMVEeuUaMpahSh9xw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_qwIY0AMVEeuUaMpahSh9xw" value="1L"/>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qxlKUAMVEeuUaMpahSh9xw" name="NotFoundException" specification="_qbeXcAMVEeuUaMpahSh9xw">
+                  <ownedParameter xmi:id="_qxlKUQMVEeuUaMpahSh9xw" name="msg">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qxlKUgMVEeuUaMpahSh9xw" type="_qbbUIAMVEeuUaMpahSh9xw" direction="return"/>
+                  <language>java</language>
+                  <body>super(msg);&#xD;
+	</body>
+                </ownedBehavior>
+                <ownedOperation xmi:id="_qbeXcAMVEeuUaMpahSh9xw" name="NotFoundException" method="_qxlKUAMVEeuUaMpahSh9xw">
+                  <eAnnotations xmi:id="_qbgMoAMVEeuUaMpahSh9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                    <details xmi:id="_qbgzsAMVEeuUaMpahSh9xw" key="create"/>
+                  </eAnnotations>
+                  <ownedParameter xmi:id="_qbe-gAMVEeuUaMpahSh9xw" name="msg">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:id="_qbgzsQMVEeuUaMpahSh9xw" type="_qbbUIAMVEeuUaMpahSh9xw" direction="return"/>
+                </ownedOperation>
+              </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_qIZqcAMVEeuUaMpahSh9xw" name="ShortUrlApplication">
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qwygIAMVEeuUaMpahSh9xw" name="main" specification="_qJnLYAMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qwygIQMVEeuUaMpahSh9xw" name="args">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qwygIgMVEeuUaMpahSh9xw" value="*"/>
+                </ownedParameter>
+                <language>java</language>
+                <body>Handler globalExceptionHandler = new Handler();
+		Thread.setDefaultUncaughtExceptionHandler(globalExceptionHandler);
+		SpringApplication.run(ShortUrlApplication.class, args);
+	</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qxfqwAMVEeuUaMpahSh9xw" name="securityContext" specification="_qaKI0AMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qxfqwQMVEeuUaMpahSh9xw" type="_qshEIQMVEeuUaMpahSh9xw" direction="return"/>
+                <language>java</language>
+                <body>return SecurityContext.builder().securityReferences(basicAuthScheme()).forPaths(PathSelectors.ant(&quot;ph/v1/**&quot;))
+				.build();
+	</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qxg44AMVEeuUaMpahSh9xw" name="basicAuthScheme" specification="_qaOaQAMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qxg44QMVEeuUaMpahSh9xw" type="_qsdZwAMVEeuUaMpahSh9xw" isOrdered="true" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qxg44gMVEeuUaMpahSh9xw" value="*"/>
+                </ownedParameter>
+                <language>java</language>
+                <body>final AuthorizationScope authorizationScope = new AuthorizationScope(&quot;global&quot;, &quot;accessEverything&quot;);
+		final AuthorizationScope[] authorizationScopes = new AuthorizationScope[] { authorizationScope };
+		return Collections.singletonList(new SecurityReference(&quot;Bearer&quot;, authorizationScopes));
+
+	</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qxhf8AMVEeuUaMpahSh9xw" name="apiKey" specification="_qaRdkAMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qxhf8QMVEeuUaMpahSh9xw" type="_qsZvYQMVEeuUaMpahSh9xw" direction="return"/>
+                <language>java</language>
+                <body>return new ApiKey(&quot;Bearer&quot;, &quot;Authorization&quot;, &quot;header&quot;);
+	</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qxhf8gMVEeuUaMpahSh9xw" name="apiDocket" specification="_qaTSwAMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qxhf8wMVEeuUaMpahSh9xw" type="_qsi5UQMVEeuUaMpahSh9xw" direction="return"/>
+                <language>java</language>
+                <body>Docket docket = new Docket(DocumentationType.SWAGGER_2).select()
+				// .apis(RequestHandlerSelectors.basePackage(&quot;com.url.shortner.shorturl&quot;))
+				.apis(RequestHandlerSelectors.withClassAnnotation(RestController.class)).paths(PathSelectors.any())
+				.build().securitySchemes(Arrays.asList(apiKey()))
+				.securityContexts(Collections.singletonList(securityContext()));
+		return docket;
+	</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qxiHAAMVEeuUaMpahSh9xw" name="ResistFilter" specification="_qaYyUAMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qxiHAQMVEeuUaMpahSh9xw" type="_qsGNYQMVEeuUaMpahSh9xw" direction="return"/>
+                <language>java</language>
+                <body>FilterRegistrationBean registration = new FilterRegistrationBean();
+		registration.setFilter(new RequestObjectFilter());
+		registration.setName(&quot;customFilter&quot;);
+		registration.addUrlPatterns(&quot;/gt/*&quot;);
+		registration.setOrder(10);
+		return registration;
+	</body>
+              </ownedBehavior>
+              <ownedOperation xmi:id="_qJnLYAMVEeuUaMpahSh9xw" name="main" isStatic="true" method="_qwygIAMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qJnycAMVEeuUaMpahSh9xw" name="args">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qaIToAMVEeuUaMpahSh9xw" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_qaKI0AMVEeuUaMpahSh9xw" name="securityContext" visibility="private" method="_qxfqwAMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qvoCgAMVEeuUaMpahSh9xw" type="_qshEIQMVEeuUaMpahSh9xw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_qaOaQAMVEeuUaMpahSh9xw" name="basicAuthScheme" visibility="private" method="_qxg44AMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qaPBUAMVEeuUaMpahSh9xw" type="_qsdZwAMVEeuUaMpahSh9xw" isOrdered="true" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qaPoYAMVEeuUaMpahSh9xw" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_qaRdkAMVEeuUaMpahSh9xw" name="apiKey" visibility="private" method="_qxhf8AMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qvopkAMVEeuUaMpahSh9xw" type="_qsZvYQMVEeuUaMpahSh9xw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_qaTSwAMVEeuUaMpahSh9xw" name="apiDocket" method="_qxhf8gMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qvpQoAMVEeuUaMpahSh9xw" type="_qsi5UQMVEeuUaMpahSh9xw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_qaYyUAMVEeuUaMpahSh9xw" name="ResistFilter" method="_qxiHAAMVEeuUaMpahSh9xw">
+                <ownedParameter xmi:id="_qvp3sAMVEeuUaMpahSh9xw" type="_qsGNYQMVEeuUaMpahSh9xw" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_qFdrMAMVEeuUaMpahSh9xw" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_qFeSQAMVEeuUaMpahSh9xw" name="util">
+        <packagedElement xmi:type="uml:Class" xmi:id="_qr3j4AMVEeuUaMpahSh9xw" name="Arrays"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_qr9DcAMVEeuUaMpahSh9xw" name="Collections"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_qr_fsQMVEeuUaMpahSh9xw" name="List"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_qvxMcAMVEeuUaMpahSh9xw" name="lang">
+        <packagedElement xmi:type="uml:Class" xmi:id="_qvxMcQMVEeuUaMpahSh9xw" name="RuntimeException"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_qFfgYAMVEeuUaMpahSh9xw" name="org">
+      <packagedElement xmi:type="uml:Package" xmi:id="_qFfgYQMVEeuUaMpahSh9xw" name="springframework">
+        <packagedElement xmi:type="uml:Package" xmi:id="_qFgHcAMVEeuUaMpahSh9xw" name="boot">
+          <packagedElement xmi:type="uml:Package" xmi:id="_qFgugAMVEeuUaMpahSh9xw" name="autoconfigure">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_qsEYMAMVEeuUaMpahSh9xw" name="SpringBootApplication"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_qFhVkAMVEeuUaMpahSh9xw" name="web">
+            <packagedElement xmi:type="uml:Package" xmi:id="_qFhVkQMVEeuUaMpahSh9xw" name="servlet">
+              <packagedElement xmi:type="uml:Class" xmi:id="_qsGNYQMVEeuUaMpahSh9xw" name="FilterRegistrationBean"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_qsB78QMVEeuUaMpahSh9xw" name="SpringApplication"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_qFh8oAMVEeuUaMpahSh9xw" name="context">
+          <packagedElement xmi:type="uml:Package" xmi:id="_qFh8oQMVEeuUaMpahSh9xw" name="annotation">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_qsIpoAMVEeuUaMpahSh9xw" name="Bean"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_qsKe0QMVEeuUaMpahSh9xw" name="ComponentScan"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_qvYK4AMVEeuUaMpahSh9xw" name="Configuration"/>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_qFjKwAMVEeuUaMpahSh9xw" name="web">
+          <packagedElement xmi:type="uml:Package" xmi:id="_qFjKwQMVEeuUaMpahSh9xw" name="bind">
+            <packagedElement xmi:type="uml:Package" xmi:id="_qFjx0AMVEeuUaMpahSh9xw" name="annotation">
+              <packagedElement xmi:type="uml:Interface" xmi:id="_qsNiIAMVEeuUaMpahSh9xw" name="RestController"/>
+              <packagedElement xmi:type="uml:Interface" xmi:id="_qsufgQMVEeuUaMpahSh9xw" name="RequestMapping"/>
+              <packagedElement xmi:type="uml:Interface" xmi:id="_qvLWkAMVEeuUaMpahSh9xw" name="PathVariable"/>
+              <packagedElement xmi:type="uml:Interface" xmi:id="_qvNLwQMVEeuUaMpahSh9xw" name="PostMapping"/>
+              <packagedElement xmi:type="uml:Interface" xmi:id="_qvPA8AMVEeuUaMpahSh9xw" name="RequestBody"/>
+              <packagedElement xmi:type="uml:Enumeration" xmi:id="_qvRdMAMVEeuUaMpahSh9xw" name="RequestMethod"/>
+              <packagedElement xmi:type="uml:Interface" xmi:id="_qvTSYAMVEeuUaMpahSh9xw" name="RequestParam"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_qHlLEAMVEeuUaMpahSh9xw" name="servlet">
+            <packagedElement xmi:type="uml:Package" xmi:id="_qHlLEQMVEeuUaMpahSh9xw" name="config">
+              <packagedElement xmi:type="uml:Package" xmi:id="_qHlyIAMVEeuUaMpahSh9xw" name="annotation">
+                <packagedElement xmi:type="uml:Class" xmi:id="_qvanIAMVEeuUaMpahSh9xw" name="InterceptorRegistry"/>
+                <packagedElement xmi:type="uml:Class" xmi:id="_qvb1QQMVEeuUaMpahSh9xw" name="ResourceHandlerRegistry"/>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_qvdqcAMVEeuUaMpahSh9xw" name="WebMvcConfigurer"/>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_qGaGYAMVEeuUaMpahSh9xw" name="beans">
+          <packagedElement xmi:type="uml:Package" xmi:id="_qGaGYQMVEeuUaMpahSh9xw" name="factory">
+            <packagedElement xmi:type="uml:Package" xmi:id="_qGatcAMVEeuUaMpahSh9xw" name="annotation">
+              <packagedElement xmi:type="uml:Interface" xmi:id="_qsqOEAMVEeuUaMpahSh9xw" name="Autowired"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_qGatcQMVEeuUaMpahSh9xw" name="http">
+          <packagedElement xmi:type="uml:Enumeration" xmi:id="_qssDQAMVEeuUaMpahSh9xw" name="HttpStatus"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_qstRYQMVEeuUaMpahSh9xw" name="ResponseEntity"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_qFmOEAMVEeuUaMpahSh9xw" name="springfox">
+      <packagedElement xmi:type="uml:Package" xmi:id="_qFm1IAMVEeuUaMpahSh9xw" name="documentation">
+        <packagedElement xmi:type="uml:Package" xmi:id="_qFm1IQMVEeuUaMpahSh9xw" name="builders">
+          <packagedElement xmi:type="uml:Class" xmi:id="_qsVd8AMVEeuUaMpahSh9xw" name="PathSelectors"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_qsWsEQMVEeuUaMpahSh9xw" name="RequestHandlerSelectors"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_qFoDQAMVEeuUaMpahSh9xw" name="service">
+          <packagedElement xmi:type="uml:Class" xmi:id="_qsZvYQMVEeuUaMpahSh9xw" name="ApiKey"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_qsbkkAMVEeuUaMpahSh9xw" name="AuthorizationScope"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_qsdZwAMVEeuUaMpahSh9xw" name="SecurityReference"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_qFpRYAMVEeuUaMpahSh9xw" name="spi">
+          <packagedElement xmi:type="uml:Package" xmi:id="_qFp4cAMVEeuUaMpahSh9xw" name="service">
+            <packagedElement xmi:type="uml:Package" xmi:id="_qFqfgAMVEeuUaMpahSh9xw" name="contexts">
+              <packagedElement xmi:type="uml:Class" xmi:id="_qshEIQMVEeuUaMpahSh9xw" name="SecurityContext"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_qsfO8AMVEeuUaMpahSh9xw" name="DocumentationType"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_qFrGkAMVEeuUaMpahSh9xw" name="spring">
+          <packagedElement xmi:type="uml:Package" xmi:id="_qFrGkQMVEeuUaMpahSh9xw" name="web">
+            <packagedElement xmi:type="uml:Package" xmi:id="_qFrtoAMVEeuUaMpahSh9xw" name="plugins">
+              <packagedElement xmi:type="uml:Class" xmi:id="_qsi5UQMVEeuUaMpahSh9xw" name="Docket"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_qFsUsAMVEeuUaMpahSh9xw" name="swagger2">
+          <packagedElement xmi:type="uml:Package" xmi:id="_qFs7wAMVEeuUaMpahSh9xw" name="annotations">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_qskHcQMVEeuUaMpahSh9xw" name="EnableSwagger2"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_k8uPwAMVEeuUaMpahSh9xw">
+      <eAnnotations xmi:id="_k9dPkAMVEeuUaMpahSh9xw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_k_ugcAMVEeuUaMpahSh9xw" base_Package="_jca6oAMVEeuUaMpahSh9xw">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_qJAHYAMVEeuUaMpahSh9xw" base_Element="_qIZqcAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:StyledElement xmi:id="_qaHFgAMVEeuUaMpahSh9xw" base_Element="_qJnLYAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:StyledElement xmi:id="_qaMlEAMVEeuUaMpahSh9xw" base_Element="_qaKI0AMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:StyledElement xmi:id="_qaQ2gAMVEeuUaMpahSh9xw" base_Element="_qaOaQAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:StyledElement xmi:id="_qaSrsAMVEeuUaMpahSh9xw" base_Element="_qaRdkAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Annotations xmi:id="_qaXkMAMVEeuUaMpahSh9xw" base_Element="_qaTSwAMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qaXkMQMVEeuUaMpahSh9xw" name="Bean"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qalmoAMVEeuUaMpahSh9xw" base_Element="_qaYyUAMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qalmoQMVEeuUaMpahSh9xw" name="Bean"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qanb0AMVEeuUaMpahSh9xw" base_Element="_qIZqcAMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qaoC4AMVEeuUaMpahSh9xw" name="EnableSwagger2"/>
+    <annotations xmi:id="_qaop8AMVEeuUaMpahSh9xw" name="SpringBootApplication"/>
+    <annotations xmi:id="_qaop8QMVEeuUaMpahSh9xw" name="ComponentScan"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_qaya8AMVEeuUaMpahSh9xw" base_Element="_qav-sAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Generics xmi:id="_qbGkAAMVEeuUaMpahSh9xw" genericsValue="?" base_Element="_qbBrgAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Annotations xmi:id="_qbJAQAMVEeuUaMpahSh9xw" base_Element="_qbBrgAMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qbJnUAMVEeuUaMpahSh9xw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qbRjIAMVEeuUaMpahSh9xw" base_Element="_qav-sAMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qbSKMAMVEeuUaMpahSh9xw" name="RestController"/>
+    <annotations xmi:id="_qbSKMQMVEeuUaMpahSh9xw" name="RequestMapping">
+      <annotationParameters xmi:id="_qbSxQAMVEeuUaMpahSh9xw" skipName="true" skipArray="true">
+        <valueSpecifications xmi:type="uml:LiteralString" xmi:id="_qxo0sAMVEeuUaMpahSh9xw" value="&quot;/api&quot;"/>
+      </annotationParameters>
+    </annotations>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_qbqksAMVEeuUaMpahSh9xw" base_Element="_qboIcAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Generics xmi:id="_qbwEQAMVEeuUaMpahSh9xw" genericsValue="?" base_Element="_qbsZ4AMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Annotations xmi:id="_qbwrUAMVEeuUaMpahSh9xw" base_Element="_qbtA8AMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qbwrUQMVEeuUaMpahSh9xw" name="RequestParam">
+      <annotationParameters xmi:id="_qbxSYAMVEeuUaMpahSh9xw" skipName="true" skipArray="true">
+        <valueSpecifications xmi:type="uml:LiteralString" xmi:id="_qxqC0gMVEeuUaMpahSh9xw" value="&quot;url&quot;"/>
+      </annotationParameters>
+    </annotations>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qbx5cAMVEeuUaMpahSh9xw" base_Element="_qbtA8QMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qbx5cQMVEeuUaMpahSh9xw" name="PathVariable">
+      <annotationParameters xmi:id="_qbx5cgMVEeuUaMpahSh9xw" skipName="true" skipArray="true">
+        <valueSpecifications xmi:type="uml:LiteralString" xmi:id="_qxqp4AMVEeuUaMpahSh9xw" value="&quot;operation&quot;"/>
+      </annotationParameters>
+    </annotations>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qbyggAMVEeuUaMpahSh9xw" base_Element="_qbtoAAMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qbyggQMVEeuUaMpahSh9xw" name="RequestParam">
+      <annotationParameters xmi:id="_qbzHkAMVEeuUaMpahSh9xw" skipName="true" skipArray="true">
+        <valueSpecifications xmi:type="uml:LiteralString" xmi:id="_qxqp4QMVEeuUaMpahSh9xw" value="&quot;shorturl&quot;"/>
+      </annotationParameters>
+    </annotations>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qbzuoAMVEeuUaMpahSh9xw" base_Element="_qbsZ4AMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qbzuoQMVEeuUaMpahSh9xw" name="RequestMapping">
+      <annotationParameters xmi:id="_qb0VsAMVEeuUaMpahSh9xw" name="value" skipArray="true">
+        <valueSpecifications xmi:type="uml:LiteralString" xmi:id="_qxqC0AMVEeuUaMpahSh9xw" value="&quot;/{operation}&quot;"/>
+      </annotationParameters>
+      <annotationParameters xmi:id="_qb0VsQMVEeuUaMpahSh9xw" name="method" skipArray="true">
+        <valueSpecifications xmi:type="uml:LiteralString" xmi:id="_qxqC0QMVEeuUaMpahSh9xw" value="RequestMethod.GET"/>
+      </annotationParameters>
+    </annotations>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qb4AEAMVEeuUaMpahSh9xw" base_Element="_qboIcAMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qb4AEQMVEeuUaMpahSh9xw" name="RequestMapping">
+      <annotationParameters xmi:id="_qb4AEgMVEeuUaMpahSh9xw" skipName="true" skipArray="true">
+        <valueSpecifications xmi:type="uml:LiteralString" xmi:id="_qxpbwAMVEeuUaMpahSh9xw" value="&quot;/default&quot;"/>
+      </annotationParameters>
+    </annotations>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_qciHYAMVEeuUaMpahSh9xw" base_Element="_qcfrIAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Annotations xmi:id="_qcj8kAMVEeuUaMpahSh9xw" base_Element="_qcfrIAMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qckjoAMVEeuUaMpahSh9xw" name="Configuration"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_qr6nMAMVEeuUaMpahSh9xw" base_Element="_qr3j4AMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qr_fsAMVEeuUaMpahSh9xw" base_Element="_qr9DcAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsB78AMVEeuUaMpahSh9xw" base_Element="_qr_fsQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsDxIAMVEeuUaMpahSh9xw" base_Element="_qsB78QMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsGNYAMVEeuUaMpahSh9xw" base_Element="_qsEYMAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsICkAMVEeuUaMpahSh9xw" base_Element="_qsGNYQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsKe0AMVEeuUaMpahSh9xw" base_Element="_qsIpoAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsM7EAMVEeuUaMpahSh9xw" base_Element="_qsKe0QMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsQlcAMVEeuUaMpahSh9xw" base_Element="_qsNiIAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsSaoAMVEeuUaMpahSh9xw" base_Element="_qsQlcQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsU24AMVEeuUaMpahSh9xw" base_Element="_qsTBsAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsWsEAMVEeuUaMpahSh9xw" base_Element="_qsVd8AMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsZvYAMVEeuUaMpahSh9xw" base_Element="_qsWsEQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsa9gAMVEeuUaMpahSh9xw" base_Element="_qsZvYQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qscysAMVEeuUaMpahSh9xw" base_Element="_qsbkkAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsen4AMVEeuUaMpahSh9xw" base_Element="_qsdZwAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qshEIAMVEeuUaMpahSh9xw" base_Element="_qsfO8AMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsi5UAMVEeuUaMpahSh9xw" base_Element="_qshEIQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qskHcAMVEeuUaMpahSh9xw" base_Element="_qsi5UQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsl8oAMVEeuUaMpahSh9xw" base_Element="_qskHcQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsrcMAMVEeuUaMpahSh9xw" base_Element="_qsqOEAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qstRYAMVEeuUaMpahSh9xw" base_Element="_qssDQAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsufgAMVEeuUaMpahSh9xw" base_Element="_qstRYQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsvtoAMVEeuUaMpahSh9xw" base_Element="_qsufgQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsxi0AMVEeuUaMpahSh9xw" base_Element="_qswUsAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qsyw8AMVEeuUaMpahSh9xw" base_Element="_qsxi0QMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qvNLwAMVEeuUaMpahSh9xw" base_Element="_qvLWkAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qvOZ4AMVEeuUaMpahSh9xw" base_Element="_qvNLwQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qvQPEAMVEeuUaMpahSh9xw" base_Element="_qvPA8AMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qvSrUAMVEeuUaMpahSh9xw" base_Element="_qvRdMAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qvUggAMVEeuUaMpahSh9xw" base_Element="_qvTSYAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qvaAEAMVEeuUaMpahSh9xw" base_Element="_qvYK4AMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qvb1QAMVEeuUaMpahSh9xw" base_Element="_qvanIAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qvdDYAMVEeuUaMpahSh9xw" base_Element="_qvb1QQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Reference xmi:id="_qve4kAMVEeuUaMpahSh9xw" base_Element="_qvdqcAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Generics xmi:id="_qvuJIAMVEeuUaMpahSh9xw" genericsValue="?" base_Element="_qvrs4AMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Annotations xmi:id="_qvv-UAMVEeuUaMpahSh9xw" base_Element="_qvrs4AMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qvv-UQMVEeuUaMpahSh9xw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_qvzBoAMVEeuUaMpahSh9xw" base_Element="_qvxMcQMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Generics xmi:id="_qv5vUAMVEeuUaMpahSh9xw" genericsValue="?" base_Element="_qv36IAMVEeuUaMpahSh9xw"/>
+  <UMLLabProfile:Annotations xmi:id="_qv69cAMVEeuUaMpahSh9xw" base_Element="_qv36IQMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qv69cQMVEeuUaMpahSh9xw" name="RequestBody"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qv7kgAMVEeuUaMpahSh9xw" base_Element="_qv36IgMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qv8LkAMVEeuUaMpahSh9xw" name="PathVariable">
+      <annotationParameters xmi:id="_qv8LkQMVEeuUaMpahSh9xw" skipName="true" skipArray="true">
+        <valueSpecifications xmi:type="uml:LiteralString" xmi:id="_qxqp4wMVEeuUaMpahSh9xw" value="&quot;operation&quot;"/>
+      </annotationParameters>
+    </annotations>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qv8yoAMVEeuUaMpahSh9xw" base_Element="_qv36IAMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qv8yoQMVEeuUaMpahSh9xw" name="PostMapping">
+      <annotationParameters xmi:id="_qv8yogMVEeuUaMpahSh9xw" skipName="true" skipArray="true">
+        <valueSpecifications xmi:type="uml:LiteralString" xmi:id="_qxqp4gMVEeuUaMpahSh9xw" value="&quot;/{operation}&quot;"/>
+      </annotationParameters>
+    </annotations>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qwAdAAMVEeuUaMpahSh9xw" base_Element="_qv_O4AMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qwBEEAMVEeuUaMpahSh9xw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qwC5QAMVEeuUaMpahSh9xw" base_Element="_qwBEEQMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qwC5QQMVEeuUaMpahSh9xw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Annotations xmi:id="_qwGjoAMVEeuUaMpahSh9xw" base_Element="_qwEucAMVEeuUaMpahSh9xw">
+    <annotations xmi:id="_qwGjoQMVEeuUaMpahSh9xw" name="Autowired"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_qx5TYAMVEeuUaMpahSh9xw" base_Element="_qx4FQAMVEeuUaMpahSh9xw"/>
+</xmi:XMI>
