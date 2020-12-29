@@ -103,6 +103,85 @@ public class GenericRepository {
 		}
 	}
 	
+@Service
+public class LookUpDataService {
+
+	@Autowired
+	GenericRepository genericRepository;
+	
+	@Autowired
+	LookUpDataRepository lookUpDataRepository;
+	
+	public LookUpDataBean save(LookUpEntity obj, String schemaName) {		
+		
+		LookUpDataBean bean = null;
+		
+		obj = genericRepository.update(obj, schemaName);
+		try {
+			String jsonString = new ObjectMapper().writeValueAsString(obj);
+			bean = new Gson().fromJson(jsonString, LookUpDataBean.class);
+		}catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+		
+		return bean;
+	}
+
+	public LookUpDataBean getById(Long id, String schemaName) {
+		
+		LookUpEntity obj = genericRepository.findById(new LookUpEntity(), schemaName, id);
+		LookUpDataBean bean = null;
+		try {
+			String jsonString = new ObjectMapper().writeValueAsString(obj);
+			bean = new Gson().fromJson(jsonString, LookUpDataBean.class);
+		}catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+		
+		return bean;
+	}
+
+	public List<LookUpDataBean> getAll(String schemaName) {
+		
+		List<LookUpEntity> entityList = genericRepository.findAll(LookUpEntity.class, schemaName);
+		List<LookUpDataBean> beanList = new ArrayList<LookUpDataBean>();
+		
+		try {
+			String jsonString = new ObjectMapper().writeValueAsString(entityList);
+			beanList = new Gson().fromJson(jsonString, new TypeToken<List<LookUpDataBean>>(){}.getType());
+			
+		}catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+		
+		return beanList;
+	}
+	
+	public List<LookUpDataBean> getAllByType(String skillType, String schemaName) {
+		
+		List<LookUpEntity> entityList = lookUpDataRepository.findAll(skillType, schemaName);
+		List<LookUpDataBean> beanList = new ArrayList<LookUpDataBean>();
+		
+		try {
+			String jsonString = new ObjectMapper().writeValueAsString(entityList);
+			beanList = new Gson().fromJson(jsonString, new TypeToken<List<LookUpDataBean>>(){}.getType());
+			
+		}catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+		
+		return beanList;
+	}
+	
+	public boolean deleteById(long id, String schemaName) {
+		
+		LookUpEntity obj = new LookUpEntity();
+		obj.setId(id);
+		return genericRepository.delete(obj, schemaName);
+	}
+	
+}
+
 	public <T> boolean delete(T t, String schemaName) {
 		
 		Transaction transaction = null;
