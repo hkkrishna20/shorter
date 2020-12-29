@@ -1,0 +1,154 @@
+@Repository
+@SuppressWarnings("all")
+public class GenericRepository {
+	
+	
+	public <T> T save(T t, String schemaName) {
+		Session session = DatasourceUtil.getHibernateSession(schemaName);
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			session.save(t);
+			transaction.commit();
+		}catch (Exception e) {
+			// TODO: handle exception
+			try {
+				MongoLog.pushLog(LogType.LOG_ERROR, schemaName, "GenericRepository", "save", e.getMessage(), new ObjectMapper().writeValueAsString(t));
+			} catch (JsonProcessingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			transaction.rollback();
+			
+			throw new RuntimeException(e.getMessage());
+		}
+		return t;
+	}
+	
+	public <T> T findById(T t, String schemaName, Long id) {
+		
+		Transaction transaction = null;
+		Session session = DatasourceUtil.getHibernateSession(schemaName);
+		try {
+			
+			transaction = session.beginTransaction();
+			
+			t = (T) session.byId(Class.forName(t.getClass().getName())).getReference(id);//byId(t.).getReference(id);
+			transaction.commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+			try {
+				MongoLog.pushLog(LogType.LOG_ERROR, schemaName, "GenericRepository", "findById", e.getMessage(), new ObjectMapper().writeValueAsString(t));
+			} catch (JsonProcessingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			transaction.rollback();
+			
+			throw new RuntimeException(e.getMessage());
+		}
+		return t;
+	}
+	
+	public <T> List<T> findAll(Class<T> t, String schemaName){
+		
+		Transaction transaction = null;
+		Session session = DatasourceUtil.getHibernateSession(schemaName);
+		try {
+			transaction = session.beginTransaction();
+			
+			CriteriaBuilder builder = session.getCriteriaBuilder();
+			CriteriaQuery<T> cQuery = builder.createQuery(t);
+			cQuery.from(t);
+			
+			//List<T> listValue = session.createQuery("from "+t.getSimpleName()).getResultList();
+			List<T> listValue = session.createQuery(cQuery).getResultList();
+ 			transaction.commit();
+			return listValue;
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+			try {
+				MongoLog.pushLog(LogType.LOG_ERROR, schemaName, "GenericRepository", "findAll", e.getMessage(), new ObjectMapper().writeValueAsString(t));
+			} catch (JsonProcessingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			transaction.rollback();
+			
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+	
+	public <T> T update(T t, String schemaName) {
+		
+		Transaction transaction = null;
+		Session session = DatasourceUtil.getHibernateSession(schemaName);
+		try {
+			transaction = session.beginTransaction();
+			session.saveOrUpdate(t);
+			transaction.commit();
+			return t;
+		}catch (Exception e) {
+			// TODO: handle exception
+			try {
+				MongoLog.pushLog(LogType.LOG_ERROR, schemaName, "GenericRepository", "update", e.getMessage(), new ObjectMapper().writeValueAsString(t));
+			} catch (JsonProcessingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			transaction.rollback();
+			
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+	
+	public <T> boolean delete(T t, String schemaName) {
+		
+		Transaction transaction = null;
+		try{
+			Session session = DatasourceUtil.getHibernateSession(schemaName);
+			transaction = session.beginTransaction();
+			session.delete(t);
+			transaction.commit();
+			return true;
+		}catch (Exception e) {
+			// TODO: handle exception
+			try {
+				MongoLog.pushLog(LogType.LOG_ERROR, schemaName, "GenericRepository", "delete", e.getMessage(), new ObjectMapper().writeValueAsString(t));
+			} catch (JsonProcessingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			transaction.rollback();
+			
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+	
+	public boolean deleteById(Class<?> type, long id, String schemaName) {
+	
+		Transaction transaction = null;
+		try{
+			Session session = DatasourceUtil.getHibernateSession(schemaName);
+			transaction = session.beginTransaction();
+			Object instances = session.load(type, id);
+			if(instances != null) {
+				session.delete(instances);
+				transaction.commit();
+				return true;
+			}else {
+				transaction.rollback();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			MongoLog.pushLog(LogType.LOG_ERROR, schemaName, "GenericRepository", "deleteById", e.getMessage(), "Deleting record : " + type.getName() + " id : " + id);
+			transaction.rollback();
+
+			throw new RuntimeException(e.getMessage());
+		}
+		
+		return false;
+	}
+	
+}
