@@ -231,3 +231,37 @@ public class LookUpDataService {
 	}
 	
 }
+
+
+@Repository
+public class LookUpDataRepository {
+	
+	public List<LookUpEntity> findAll(String skillType, String schemaName){		
+		
+		Transaction transaction = null;
+		Session session = DatasourceUtil.getHibernateSession(schemaName);
+		try {
+			transaction = session.beginTransaction();
+			
+			CriteriaBuilder builder = session.getCriteriaBuilder();
+			CriteriaQuery<LookUpEntity> cQuery = builder.createQuery(LookUpEntity.class);
+			Root<LookUpEntity> root =  cQuery.from(LookUpEntity.class);
+			cQuery.select(root);
+			cQuery.where(builder.equal(root.get("skillType"), skillType.toUpperCase()));
+			
+			List<LookUpEntity> listValue = session.createQuery(cQuery).getResultList();
+ 			
+			transaction.commit();
+			
+			return listValue;
+			
+		} catch (Exception e) {
+			MongoLog.pushLog(LogType.LOG_ERROR, schemaName, "LookUpDataRepository", "findAll", e.getMessage(), "");
+			transaction.rollback();
+
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+
+}
+
